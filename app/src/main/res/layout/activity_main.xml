@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0d0d0d">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvExpression"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1a1a"
+            android:gravity="end"
+            android:minHeight="50dp"
+            android:padding="12dp"
+            android:text=""
+            android:textColor="#888888"
+            android:textSize="18sp"
+            android:ellipsize="start"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1a1a"
+            android:gravity="end"
+            android:minHeight="70dp"
+            android:padding="12dp"
+            android:text="0"
+            android:textColor="#f0f0f0"
+            android:textSize="36sp"
+            android:ellipsize="start"
+            android:singleLine="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- MODE TOGGLE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnModeBasic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Basic"
+                android:backgroundTint="#2e2e2e"
+                android:textColor="#cccccc"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnModeScientific"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Scientific"
+                android:backgroundTint="#3a3a3a"
+                android:textColor="#cccccc"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <!-- SCIENTIFIC PANEL -->
+        <LinearLayout
+            android:id="@+id/layoutScientific"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Row: sin cos tan log -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                <Button android:id="@+id/btnSin" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="sin" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnCos" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="cos" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnTan" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="tan" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnLog" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="log" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp"/>
+            </LinearLayout>
+
+            <!-- Row: sinh cosh tanh ln -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                <Button android:id="@+id/btnSinh" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="sinh" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnCosh" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="cosh" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnTanh" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="tanh" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnLn" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="ln" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp"/>
+            </LinearLayout>
+
+            <!-- Row: x² √ π e -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                <Button android:id="@+id/btnSquare" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="x²" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnSqrt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="√" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnPi" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="π" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnE" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="e" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp"/>
+            </LinearLayout>
+
+            <!-- Row: xʸ 1/x n! DEG -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                <Button android:id="@+id/btnPow" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="xʸ" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnInverse" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="1/x" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnFactorial" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="n!" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnDegRad" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="DEG" android:backgroundTint="#2e2e2e" android:textColor="#aaaaaa" android:layout_marginStart="2dp"/>
+            </LinearLayout>
+
+            <!-- Row: nPr nCr |x| mod -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <Button android:id="@+id/btnPerm" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="nPr" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnComb" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="nCr" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnAbs" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="|x|" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+                <Button android:id="@+id/btnMod" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="mod" android:backgroundTint="#3a3a3a" android:textColor="#cccccc" android:layout_marginStart="2dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row: AC +/- % ÷ -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+            <Button android:id="@+id/btnClear" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="AC" android:backgroundTint="#757575" android:textColor="#0d0d0d" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btnToggleSign" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="+/-" android:backgroundTint="#757575" android:textColor="#0d0d0d" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btnPercent" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="%" android:backgroundTint="#757575" android:textColor="#0d0d0d" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btnDivide" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="÷" android:backgroundTint="#9e9e9e" android:textColor="#0d0d0d" android:layout_marginStart="2dp"/>
+        </LinearLayout>
+
+        <!-- Row: 7 8 9 × -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+            <Button android:id="@+id/btn7" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="7" android:backgroundTint="#1f1f1f" android:textColor="#f0f0f0" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btn8" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="8" android:backgroundTint="#1f1f1f" android:textColor="#f0f0f0" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btn9" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="9" android:backgroundTint="#1f1f1f" android:textColor="#f0f0f0" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btnMultiply" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="×" android:backgroundTint="#9e9e9e" android:textColor="#0d0d0d" android:layout_marginStart="2dp"/>
+        </LinearLayout>
+
+        <!-- Row: 4 5 6 - -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+            <Button android:id="@+id/btn4" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="4" android:backgroundTint="#1f1f1f" android:textColor="#f0f0f0" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btn5" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="5" android:backgroundTint="#1f1f1f" android:textColor="#f0f0f0" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btn6" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="6" android:backgroundTint="#1f1f1f" android:textColor="#f0f0f0" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btnSubtract" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="-" android:backgroundTint="#9e9e9e" android:textColor="#0d0d0d" android:layout_marginStart="2dp"/>
+        </LinearLayout>
+
+        <!-- Row: 1 2 3 + -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+            <Button android:id="@+id/btn1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="1" android:backgroundTint="#1f1f1f" android:textColor="#f0f0f0" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btn2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="2" android:backgroundTint="#1f1f1f" android:textColor="#f0f0f0" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btn3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="3" android:backgroundTint="#1f1f1f" android:textColor="#f0f0f0" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btnAdd" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="+" android:backgroundTint="#9e9e9e" android:textColor="#0d0d0d" android:layout_marginStart="2dp"/>
+        </LinearLayout>
+
+        <!-- Row: 0 . ⌫ = -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+            <Button android:id="@+id/btn0" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="0" android:backgroundTint="#1f1f1f" android:textColor="#f0f0f0" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btnDot" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="." android:backgroundTint="#1f1f1f" android:textColor="#f0f0f0" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btnBackspace" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="⌫" android:backgroundTint="#757575" android:textColor="#0d0d0d" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btnEquals" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="=" android:backgroundTint="#bdbdbd" android:textColor="#0d0d0d" android:layout_marginStart="2dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
